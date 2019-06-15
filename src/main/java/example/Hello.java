@@ -1,33 +1,18 @@
 package example;
 
 import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public class Hello {
+public class Hello implements RequestHandler<Object, String> {
 
-    // Define two classes/POJOs for use with Lambda function.
-    public static class RequestClass {
+   public String handleRequest(Object request, Context context) {
+      context.getLogger().log("Request: " + request);
 
-		public Object getFirstName() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		public Object getLastName() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-    }
-
-    public static class ResponseClass {
-
-		public ResponseClass(String greetingString) {
-			// TODO Auto-generated constructor stub
-		}
-
-    }
-
-    public static ResponseClass myHandler(RequestClass request, Context context) {
-        String greetingString = String.format("Hello %s, %s.", request.getFirstName(), request.getLastName());
-        return new ResponseClass(greetingString);
-    }
+      System.out.println("AWS Lambda function name: " + context.getFunctionName());
+      System.out.println("Memory Allocated: " + context.getMemoryLimitInMB());
+      System.out.println("Time remaining in milliseconds: " + context.getRemainingTimeInMillis());
+      System.out.println("Cloudwatch group name " + context.getLogGroupName());
+      System.out.println("AWS Lambda Request Id " + context.getAwsRequestId());
+      return "Hello from Lambda!";
+   }
 }
