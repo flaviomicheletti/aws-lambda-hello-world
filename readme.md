@@ -1,13 +1,11 @@
-# Readme
+# AWS Lambda - Hello World
+
+Uma pequena coleção de lambdas (AWS) no melhor estilo __hello world__.
+
+Comecei com Java, mas podem surgir outras linguagens.
 
 
-Hello World em Java Lambda (AWS) + API Gatway (AWS)
-
-
-Veja funcionando aqui https://lsdk5p7kkg.execute-api.us-east-2.amazonaws.com/testing
-
-
-Tutoriais...
+__Bom ler...__
 
 + https://docs.aws.amazon.com/pt_br/lambda/latest/dg/java-create-jar-pkg-maven-and-eclipse.html
 + https://maven.apache.org/plugins/maven-shade-plugin/examples/includes-excludes.html
