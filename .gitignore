@@ -32,3 +32,5 @@ bin/
 
 # logs
 *.log
+
+output*
